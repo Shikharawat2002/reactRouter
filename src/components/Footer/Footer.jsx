@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {Link, NavLink} from 'react-router-dom'
 
 export default function Footer() {
     return (
@@ -20,14 +20,24 @@ export default function Footer() {
                             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">Resources</h2>
                             <ul className="text-gray-500 font-medium">
                                 <li className="mb-4">
-                                    <Link to="/" className="hover:underline">
-                                        Home
-                                    </Link>
+                                <NavLink
+                                to="/ "
+                                    className={({isActive}) =>
+                                        `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-orange-700" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0 hover:underline`
+                                    }
+                                    >
+                                    Home
+                                    </NavLink>
                                 </li>
                                 <li>
-                                    <Link to="/about" className="hover:underline">
-                                        About
-                                    </Link>
+                                <NavLink
+                                to="/about"
+                                    className={({isActive}) =>
+                                        ` ${isActive ? "text-orange-700": "text-gray-700"}  hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0 hover:underline`
+                                    }
+                                >
+                                    About
+                                </NavLink>
                                 </li>
                             </ul>
                         </div>
@@ -41,7 +51,14 @@ export default function Footer() {
                                         target="_blank"
                                         rel="noreferrer"
                                     >
-                                        Github
+                                       <NavLink
+                                to="/github"
+                                    className={({isActive}) =>
+                                        `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-orange-700" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+                                    }
+                                >
+                                    Github
+                                </NavLink>
                                     </a>
                                 </li>
                                 <li>
@@ -71,11 +88,9 @@ export default function Footer() {
                 <hr className="my-6 border-gray-200 sm:mx-auto lg:my-8" />
                 <div className="sm:flex sm:items-center sm:justify-between">
                     <span className="text-sm text-gray-500 sm:text-center">
-                        © 2023
                         <a href="https://hiteshchoudhary.com/" className="hover:underline">
-                            hiteshchoudhary
+                           ShikhaRawat
                         </a>
-                        . All Rights Reserved.
                     </span>
                     <div className="flex mt-4 space-x-5 sm:justify-center sm:mt-0">
                         <Link to="#" className="text-gray-500 hover:text-gray-900">
@@ -104,7 +119,7 @@ export default function Footer() {
                             >
                                 <path d="M16.942 1.556a16.3 16.3 0 0 0-4.126-1.3 12.04 12.04 0 0 0-.529 1.1 15.175 15.175 0 0 0-4.573 0 11.585 11.585 0 0 0-.535-1.1 16.274 16.274 0 0 0-4.129 1.3A17.392 17.392 0 0 0 .182 13.218a15.785 15.785 0 0 0 4.963 2.521c.41-.564.773-1.16 1.084-1.785a10.63 10.63 0 0 1-1.706-.83c.143-.106.283-.217.418-.33a11.664 11.664 0 0 0 10.118 0c.137.113.277.224.418.33-.544.328-1.116.606-1.71.832a12.52 12.52 0 0 0 1.084 1.785 16.46 16.46 0 0 0 5.064-2.595 17.286 17.286 0 0 0-2.973-11.59ZM6.678 10.813a1.941 1.941 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.919 1.919 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Zm6.644 0a1.94 1.94 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.918 1.918 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Z" />
                             </svg>
-                            <span className="sr-only">Discord community</span>
+                            
                         </Link>
                         <Link to="#" className="text-gray-500">
                             <svg
@@ -152,7 +167,6 @@ export default function Footer() {
                                     clip-rule="evenodd"
                                 />
                             </svg>
-                            <span className="sr-only">Dribbble account</span>
                         </Link>
                     </div>
                 </div>
